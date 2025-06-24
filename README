@@ -46,5 +46,5 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS
 9fd478de8f95   haproxy:latest   "docker-entrypoint.s…"   2 seconds ago    Up 2 seconds    0.0.0.0:8080->80/tcp   workshop-nginx-haproxy-1
 09d365cf2717   nginx:alpine     "/docker-entrypoint.…"   47 seconds ago   Up 47 seconds   80/tcp                 workshop-nginx-backend1-1
 12e9f217761b   nginx:alpine     "/docker-entrypoint.…"   47 seconds ago   Up 47 seconds   80/tcp                 workshop-nginx-backend2-1 
-``` 
+```
 
