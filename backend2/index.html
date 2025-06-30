@@ -1,8 +1,50 @@
 <!DOCTYPE html>
-<html>
-<head><title>Backend 2</title></head>
-<body>
-  <h1>Servidor Backend 2</h1>
-  <p>Resposta HTTP 200 </p>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend 02</title>
+    <!-- Inclui o CDN do Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o corpo da página */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md text-center">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6 animate-fade-in-down">App 02</h1>
+        <p class="text-lg text-gray-700 mb-6">O nome salvo é: <strong id="nomeSalvo" class="text-indigo-600 font-semibold"></strong></p>
+        <a href="/app" class="inline-block bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">Acessar o App</a>
+    </div>
+
+    <script>
+        // Adiciona um pequeno atraso para a animação inicial do conteúdo
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const nomeSalvo = localStorage.getItem('name-app');
+                document.getElementById('nomeSalvo').textContent = nomeSalvo || 'Nenhum nome foi salvo ainda.';
+            }, 500); // 500ms de atraso
+        });
+    </script>
+
+    <style>
+        /* Keyframes para a animação de fade-in-down */
+        @keyframes fade-in-down {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-down {
+            animation: fade-in-down 0.8s ease-out forwards;
+        }
+    </style>
 </body>
 </html>
